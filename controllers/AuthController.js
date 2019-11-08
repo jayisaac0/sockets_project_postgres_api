@@ -16,7 +16,7 @@ class AuthController {
         if (user.rows.length === 0) return response.status(400).json({message: 'Invalid email or password'});
 
         const validPassword = await bcrypt.compare(socket_auth_userpassword, user.rows[0].socket_auth_userpassword);
-        if (!validPassword) return response.status(400).json({message: 'Invalid email or password'});
+        if (!validPassword) return response.status(400).json({message: 'Invalid email or password!'});
 
         const token = jwt.sign({
             socket_auth_users_public_id: user.rows[0].socket_auth_users_public_id, 

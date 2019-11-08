@@ -28,7 +28,7 @@ class UserController {
         };
 
         user = await pool.query(sqlPostRequest);
-        return response.status(200).json({ message: 'User account successfully created horray!', data: user});
+        return response.status(200).json({ message: 'User account successfully created!', data: user});
  
     }
 };
