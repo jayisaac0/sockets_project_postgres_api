@@ -7,7 +7,7 @@ class AuthController {
 
     static async AuthenticateUser(request, response) {
         const {error} = validateUserLogin(request.body);
-        if (error) return response.status(200).json({message: error.details[0].message});
+        if (error) return response.status(400).json({message: error.details[0].message});
 
         const {socket_auth_useremail, socket_auth_userpassword} = request.body;
         const sqlQueryRequest = `SELECT * FROM users WHERE socket_auth_useremail='${socket_auth_useremail}'`;
