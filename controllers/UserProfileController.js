@@ -13,7 +13,7 @@ class UserProfileController {
         const sqlPostRequest = `INSERT INTO user_profile(socket_auth_users_public_id, socket_auth_user_first_name, socket_auth_user_middle_name, socket_auth_user_last_name, socket_auth_user_country, socket_auth_user_state, socket_auth_user_precise_location, socket_auth_user_contact) VALUES('${socket_auth_users_public_id}', '${socket_auth_user_first_name}', '${socket_auth_user_middle_name}', '${socket_auth_user_last_name}', '${socket_auth_user_country}', '${socket_auth_user_state}', '${socket_auth_user_precise_location}', '${socket_auth_user_contact}')`;
     
         await pool.query(sqlPostRequest);
-        return response.status(200).json({ message: 'Profile created succesfuly'});
+        return response.status(200).json({ message: 'Profile created succesfuly!'});
     };
 
     static async updateUserProfile(request, response) {

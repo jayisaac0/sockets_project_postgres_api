@@ -24,11 +24,11 @@ class UserController {
 
         let user = await pool.query(sqlFetchRequest);
         if(user.rowCount > 0) { 
-            return response.status(200).json({message: 'Username or email already already taken'});
+            return response.status(400).json({message: 'Username or email already already taken'});
         };
 
         user = await pool.query(sqlPostRequest);
-        return response.status(200).json({ message: 'User account successfully created', data: user});
+        return response.status(200).json({ message: 'User account successfully created!', data: user});
  
     }
 };
